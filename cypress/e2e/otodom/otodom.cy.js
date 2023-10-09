@@ -193,32 +193,6 @@ describe('otodom app', () => {
                     })
             })
     })
-
-    it.only('Data from the list is the same as in the advertisement page', () => {
-        acceptCookies();
-
-        clickPlaceFilter('Poznań');
-        cy.wait(1000);
-        cy.get('[data-testid="checkbox"]').eq(0).click();
-        cy.wait(1000);
-        cy.get('[data-testid="search-section-bg-wrapper"]').click();
-
-        cy.get('#priceMin').type('500000');
-        cy.get('#priceMax').type('900000');
-
-
-
-        cy.get('#areaMin').type('40');
-        cy.get('#areaMax').type('70');
-
-        cy.wait(1000);
-
-        search();
-
-        cy.get('[data-cy="listing-item-title"]').eq(0).then(titleElement => {
-            let title = titleElement.text();
-        });
-    })
 })
 
 
